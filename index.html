@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rediscover — Boots Showdown v2</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="Boots Showdown" />
+</head>
+<body>
+<header>
+  <h1>Rediscover Boots Showdown <small>Wind vs Chaos vs Abyss</small></h1>
+  <p class="muted tiny">Flat ATK math only. Choose Wind or (Chaos/Abyss) based on your move speed and boot roll. Includes Demon +200% toggle.</p>
+</header>
+
+<main class="wrap">
+  <section class="card">
+    <h2>Attack Inputs</h2>
+    <div class="grid3">
+      <label>Base ATK
+        <input id="base" type="number" inputmode="decimal" value="238274">
+      </label>
+      <label>Total ATK% (exclude boots)
+        <div class="pct">
+          <input id="atkPct" type="number" inputmode="decimal" value="143"><span class="suffix">%</span>
+        </div>
+      </label>
+      <label>Or: Final ATK (no boots) — overrides the two above if > 0
+        <input id="finalNoBoots" type="number" inputmode="decimal" value="56453113">
+      </label>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Movement Speed Components</h2>
+    <div class="grid3">
+      <label>Equipment (boots line etc.)
+        <div class="pct"><input id="msEquip" type="number" value="28"><span class="suffix">%</span></div>
+      </label>
+      <label>Rune
+        <div class="pct"><input id="msRune" type="number" value="12"><span class="suffix">%</span></div>
+      </label>
+      <label>Secret Tech
+        <div class="pct"><input id="msTech" type="number" value="11.7"><span class="suffix">%</span></div>
+      </label>
+      <label>Pet
+        <div class="pct"><input id="msPet" type="number" value="30"><span class="suffix">%</span></div>
+      </label>
+      <label>Pet Gear
+        <div class="pct"><input id="msPetGear" type="number" value="45"><span class="suffix">%</span></div>
+      </label>
+      <label>Medal
+        <div class="pct"><input id="msMedal" type="number" value="20"><span class="suffix">%</span></div>
+      </label>
+      <label>Costume
+        <div class="pct"><input id="msCostume" type="number" value="60"><span class="suffix">%</span></div>
+      </label>
+      <label>Building Buff
+        <div class="pct"><input id="msBuilding" type="number" value="50"><span class="suffix">%</span></div>
+      </label>
+      <label>Ultimate
+        <div class="pct"><input id="msUlt" type="number" value="30"><span class="suffix">%</span></div>
+      </label>
+    </div>
+    <div class="seg" style="margin-top:10px">
+      <button type="button" class="is-active" id="demonOff">Demon OFF</button>
+      <button type="button" id="demonOn">Demon ON (+200%)</button>
+    </div>
+    <p class="muted">Total MS: <strong id="msTotal">—</strong></p>
+  </section>
+
+  <section class="card">
+    <h2>Boot Settings</h2>
+    <div class="grid3">
+      <label>Chaos boots ATK% (two lines total)
+        <div class="pct"><input id="chaosAtk" type="number" value="51"><span class="suffix">%</span></div>
+      </label>
+      <label>Abyss boots ATK% (two lines total)
+        <div class="pct"><input id="abyssAtk" type="number" value="51"><span class="suffix">%</span></div>
+      </label>
+      <label>Wind roll (X% per 100% MS)
+        <div class="pct"><input id="windRoll" type="number" value="5"><span class="suffix">%</span></div>
+      </label>
+      <label>Wind ATK line (+26%)?
+        <select id="windAtkLine">
+          <option value="0">No</option>
+          <option value="26" selected>Yes (+26%)</option>
+        </select>
+      </label>
+      <label>Wind cap
+        <select id="windCap">
+          <option value="30">30% (Wind Greaves)</option>
+          <option value="40">40% (Truthful Wind)</option>
+        </select>
+      </label>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Results</h2>
+    <div class="grid2 results">
+      <div class="stat"><label>Final ATK (No Boots)</label><div id="outNoBoots">—</div></div>
+      <div class="stat"><label>Total MS</label><div id="outMS">—</div></div>
+      <div class="stat"><label>Chaos Final ATK</label><div id="outChaos">—</div></div>
+      <div class="stat"><label>Abyss Final ATK</label><div id="outAbyss">—</div></div>
+      <div class="stat"><label>Wind Final ATK</label><div id="outWind">—</div></div>
+      <div class="stat hi"><label>Winner</label><div id="outWinner">—</div></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Breakpoints</h2>
+    <p class="muted tiny">Wind beats a +X% ATK boots when <code>amp ≥ X% / (1 + ATK%/100)</code>. Your effective amp is <code>min(roll × MS/100, cap)</code>.</p>
+    <div class="grid2 results">
+      <div class="stat"><label>Required amp vs Chaos</label><div id="bpAmpChaos">—</div></div>
+      <div class="stat"><label>Required roll vs Chaos (at your MS)</label><div id="bpRollChaos">—</div></div>
+      <div class="stat"><label>Required amp vs Abyss</label><div id="bpAmpAbyss">—</div></div>
+      <div class="stat"><label>Required roll vs Abyss (at your MS)</label><div id="bpRollAbyss">—</div></div>
+      <div class="stat"><label>Cap Feasible?</label><div id="bpCapOK">—</div></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  Guild — <strong>Rediscover Alliance</strong> | Creator — <strong>SAGE</strong>
+</footer>
+
+<script src="boots.js"></script>
+</body>
+</html>
