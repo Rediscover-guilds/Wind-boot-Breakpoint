@@ -1,0 +1,10 @@
+body{background:#0c0f14;color:#e8ecf8;font-family:sans-serif}
+header{padding:16px;background:#5a4516}
+h1{margin:0} .wrap{max-width:1000px;margin:20px auto;padding:0 16px}
+.card{background:#1a1f2a;border-radius:8px;padding:12px;margin-bottom:14px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+label{display:flex;flex-direction:column}
+input,select,button{padding:8px;border-radius:6px;background:#333;color:#fff}
+.results .stat{background:#222;padding:10px;border-radius:6px}
+.results .stat.hi div{color:#ffd966;font-weight:bold}
