@@ -1,0 +1,26 @@
+
+body{margin:0;font-family:'Segoe UI',sans-serif;background:#0b0e17;color:#e8ecf8}
+header{padding:20px;background:linear-gradient(90deg,#3b2e13,#5a4516);color:#fff;text-align:center}
+h1{margin:0;font-size:24px;font-weight:700}
+.ver{font-size:16px;color:#fcd34d}
+.subtitle{margin:6px 0 0;font-size:13px;color:#ddd}
+.wrap{max-width:1100px;margin:20px auto;padding:0 16px}
+.card{background:#151a24;border-radius:12px;padding:16px;margin-bottom:18px;box-shadow:0 4px 12px rgba(0,0,0,.4)}
+h2{margin:0 0 12px;font-size:16px;color:#fcd34d;text-transform:uppercase;letter-spacing:.5px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+label{display:flex;flex-direction:column;font-size:13px;color:#aaa}
+input,select{padding:10px;border-radius:8px;border:1px solid #333;background:#222;color:#fff;font-weight:600}
+.toggles{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.toggle{flex:1;padding:10px;border-radius:8px;border:1px solid #333;background:#1f2433;color:#ccc;cursor:pointer;font-weight:600}
+.toggle.is-active{background:#c6a15b;color:#000}
+.results .grid2{gap:18px}
+.panel{background:#1f2433;padding:14px;border-radius:10px;text-align:center}
+.panel h3{margin:0 0 6px;font-size:14px;color:#bbb;font-weight:600}
+.panel div{font-size:20px;font-weight:800}
+.panel.chaos{border:1px solid #e85d5d}
+.panel.abyss{border:1px solid #9f6ee8}
+.panel.wind{border:1px solid #5dcbe8}
+.panel.truth{border:1px solid #5de88f}
+.panel.winner{border:2px solid #fcd34d;background:#2d2410}
+footer{text-align:center;padding:12px;color:#888;font-size:12px;background:#111}

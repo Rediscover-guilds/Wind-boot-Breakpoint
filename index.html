@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rediscover Boots Comparator v6</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Rediscover Boots Comparator <span class="ver">v6</span></h1>
+  <p class="subtitle">Chaos, Abyss, Wind & Truthful boots — auto‑calculate & compare</p>
+</header>
+<main class="wrap">
+  <section class="card">
+    <h2>⚔️ Attack Inputs</h2>
+    <div class="grid3">
+      <label>Base ATK<input id="base" type="number" value="238274"></label>
+      <label>Equipment ATK% (no boots)<input id="atkPct" type="number" value="143"></label>
+      <label>Total ATK with gear (override)<input id="finalNoBoots" type="number" value="56453113"></label>
+    </div>
+  </section>
+  <section class="card">
+    <h2>🏃 Movement Speed</h2>
+    <div class="grid3">
+      <label>Equipment<input id="msEquip" type="number" value="28"></label>
+      <label>Rune<input id="msRune" type="number" value="12"></label>
+      <label>Secret Tech<input id="msTech" type="number" value="11.7"></label>
+      <label>Pet<input id="msPet" type="number" value="30"></label>
+      <label>Pet Gear<input id="msPetGear" type="number" value="45"></label>
+      <label>Medal<input id="msMedal" type="number" value="20"></label>
+      <label>Costume<input id="msCostume" type="number" value="60"></label>
+      <label>Building<input id="msBuilding" type="number" value="50"></label>
+      <label>Ultimate<input id="msUlt" type="number" value="30"></label>
+    </div>
+    <div class="toggles">
+      <button id="demonOff" class="toggle is-active">Demon OFF</button>
+      <button id="demonOn" class="toggle">Demon ON (+200% MS & +30% ATK)</button>
+      <button id="glacialOff" class="toggle is-active">Glacial OFF</button>
+      <button id="glacialOn" class="toggle">Glacial ON (+80% MS)</button>
+    </div>
+    <p class="statline">Total MS: <strong id="msTotal">—</strong></p>
+  </section>
+  <section class="card">
+    <h2>🥾 Boots</h2>
+    <div class="grid3">
+      <label>Chaos lines<select id="chaosLines"><option value="0">0</option><option value="1">1 (26%)</option><option value="2" selected>2 (52%)</option></select></label>
+      <label>Abyss lines<select id="abyssLines"><option value="0">0</option><option value="1">1 (29%)</option><option value="2" selected>2 (58%)</option></select></label>
+      <label>Wind roll<input id="windRoll" type="number" value="10"></label>
+      <label>Wind ATK line<select id="windAtk"><option value="0">None</option><option value="26" selected>+26%</option></select></label>
+      <label>Truthful ATK line<select id="truthAtk"><option value="0">None</option><option value="29" selected>+29%</option></select></label>
+      <label>Wind cap<select id="windCap"><option value="30" selected>30%</option><option value="40">40%</option></select></label>
+    </div>
+  </section>
+  <section class="card results">
+    <h2>📊 Results</h2>
+    <div class="grid2">
+      <div class="panel"><h3>No Boots</h3><div id="outNoBoots">—</div></div>
+      <div class="panel"><h3>Total MS</h3><div id="outMS">—</div></div>
+      <div class="panel chaos"><h3>Chaos</h3><div id="outChaos">—</div></div>
+      <div class="panel abyss"><h3>Abyss</h3><div id="outAbyss">—</div></div>
+      <div class="panel wind"><h3>Wind (30%)</h3><div id="outWind30">—</div></div>
+      <div class="panel truth"><h3>Truthful (40%)</h3><div id="outWind40">—</div></div>
+      <div class="panel winner"><h3>Winner</h3><div id="outWinner">—</div></div>
+    </div>
+  </section>
+</main>
+<footer>Guild — <strong>Rediscover Alliance</strong> | Creator — <strong>SAGE</strong></footer>
+<script src="calc.js"></script>
+</body>
+</html>
