@@ -20,15 +20,15 @@
 <body>
 <header>
   <h1>Rediscover Boots Comparator <span class="ver">v6</span></h1>
-  <p class="subtitle">Chaos, Abyss, Wind & Truthful boots — auto‑calculate & compare</p>
+  <p class="subtitle">Chaos, Abyss, Wind & Truthful boots — auto‑calculate & compare, remove gear for base stats</p>
 </header>
 <main class="wrap">
   <section class="card">
     <h2>⚔️ Attack Inputs</h2>
     <div class="grid3">
       <label>Base ATK<input id="base" type="number" value="238274"></label>
-      <label>Equipment ATK% (no boots)<input id="atkPct" type="number" value="143"></label>
-      <label>Total ATK with gear (override)<input id="finalNoBoots" type="number" value="56453113"></label>
+      <label>Equipment ATK%<input id="atkPct" type="number" value="143"></label>
+      <label>Total ATK with gear <input id="finalNoBoots" type="number" value="56453113"></label>
     </div>
   </section>
   <section class="card">
@@ -45,10 +45,10 @@
       <label>Ultimate<input id="msUlt" type="number" value="30"></label>
     </div>
     <div class="toggles">
-      <button id="demonOff" class="toggle is-active">Demon OFF</button>
-      <button id="demonOn" class="toggle">Demon ON (+200% MS & +30% ATK)</button>
-      <button id="glacialOff" class="toggle is-active">Glacial OFF</button>
-      <button id="glacialOn" class="toggle">Glacial ON (+80% MS)</button>
+      <button id="demonOff" class="toggle is-active">Demon lord OFF</button>
+      <button id="demonOn" class="toggle">Demon lord ON (+200% MS & +30% ATK)</button>
+      <button id="glacialOff" class="toggle is-active">Glacial bow OFF</button>
+      <button id="glacialOn" class="toggle">Glacial bow ON (+80% MS)</button>
     </div>
     <p class="statline">Total MS: <strong id="msTotal">—</strong></p>
   </section>
