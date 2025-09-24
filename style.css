@@ -1,0 +1,16 @@
+
+body{margin:0;font-family:Inter,sans-serif;background:#0c0f14;color:#e8ecf8}
+header{padding:16px;background:#5a4516;color:#fff}
+h1{margin:0;font-size:20px}
+.wrap{max-width:960px;margin:20px auto;padding:0 16px 80px}
+.card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:14px;margin-bottom:14px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+label{display:flex;flex-direction:column;font-weight:700;color:#a8b0c2}
+input,select,button{padding:10px;border-radius:8px;border:1px solid #444;background:rgba(255,255,255,.08);color:#fff}
+.results .stat{padding:10px;border:1px solid #444;border-radius:8px;background:rgba(255,255,255,.06)}
+.results .stat div{font-size:18px;font-weight:900}
+.results .stat.hi div{font-size:20px;color:#fcd34d}
+.seg{margin-top:10px;display:flex;gap:8px}
+.seg button{flex:1;cursor:pointer}
+.seg .is-active{outline:2px solid #c6a15b}
